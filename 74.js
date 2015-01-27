@@ -16,14 +16,15 @@ function BlackjackHighest(hand) {
     eight : 8,
     nine  : 9,
     ten   : 10,
-    jack  : 10,
-    queen : 10,
-    king  : 10,
+    jack  : 10.1,
+    queen : 10.2,
+    king  : 10.3,
     ace   : 11
   };
+  values['ace as one'] = 1;
 
   hand.map(function(card) {
-    score += values[card];
+    score += parseInt(values[card], 10);
   });
 
   while (score > 21 && hand.indexOf('ace') > -1) {
